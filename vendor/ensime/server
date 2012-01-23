@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $ENSIME_HOME
+echo "ENSIME_HOME: $ENSIME_HOME"
+bin/server $@
