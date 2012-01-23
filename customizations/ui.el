@@ -18,3 +18,17 @@
 (global-set-key (kbd "C-S-s-d") (lambda () (interactive) (color-theme-solarized-dark)))
 (global-set-key (kbd "C-S-s-l") (lambda () (interactive) (color-theme-solarized-light)))
 
+
+;; I like splitting buffers vertically by default
+; (setq split-height-threshold nil)
+; (setq split-width-threshold 0)
+
+
+;; Moving windows...
+(global-set-key (kbd "S-s-<left>") 'windmove-left)          ; move to left windnow
+(global-set-key (kbd "S-s-<right>") 'windmove-right)        ; move to right window
+(global-set-key (kbd "S-s-<up>") 'windmove-up)              ; move to upper window
+(global-set-key (kbd "S-s-<down>") 'windmove-down)
+
+(global-set-key (kbd "s-}") 'next-buffer)
+(global-set-key (kbd "s-{") 'previous-buffer)
