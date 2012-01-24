@@ -24,3 +24,4 @@ tramp
 .smex-items
 swank/
 elpa/archives/
+*.swp
