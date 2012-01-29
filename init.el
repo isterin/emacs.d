@@ -31,6 +31,7 @@
 (vendor 'color-theme-solarized)
 (add-to-list 'load-path "~/.emacs.d/vendor/scala-mode") ;; This must be done without autorequire
 (vendor 'ensime)
+(vendor 'sr-speedbar)
 
 ; load customizations
 (mapcar 'load-directory '("~/.emacs.d/customizations"))

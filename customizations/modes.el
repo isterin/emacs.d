@@ -12,7 +12,7 @@
 (message "setting ensime....")
 ;; This is ugly, find a way to use env variables
 (getmyenv "ENSIME_HOME") ;; Needed to make the ensime script succeed
-(set-variable 'ensime-default-server-cmd "~/.emacs.d/vendor/ensime/server")
+(setq ensime-default-server-cmd "~/.emacs.d/vendor/ensime/server")
 
 
 ;; Lisp

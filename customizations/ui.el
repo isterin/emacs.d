@@ -32,3 +32,11 @@
 
 (global-set-key (kbd "s-}") 'next-buffer)
 (global-set-key (kbd "s-{") 'previous-buffer)
+
+
+(global-set-key (kbd "s-1") (lambda ()
+	(interactive)
+	(sr-speedbar-toggle)
+	(sr-speedbar-select-window)))
+(setq sr-speedbar-width 30
+	sr-speedbar-width-x 30)
