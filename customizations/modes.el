@@ -44,4 +44,3 @@
     ; (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
     (add-to-list 'slime-lisp-implementations 
       '(sbcl ("/usr/local/bin/sbcl")))))
-            
