@@ -47,10 +47,8 @@
 	  
 
 ;; R-mode
-(message "WTF????")
-(defun r-mode-hook-init ()
-  (interactive "P")
-  (message "WTF DUDE???")
-  (ess-eval-linewise
-  	"Sys.setenv(R_INTERACTIVE_DEVICE='quartz')" nil nil nil 'wait-prompt))
-(add-hook 'R-mode-hook 'r-mode-hook-init)
+(global-set-key (kbd "s-r") (lambda ()
+  (interactive)
+	(R)
+	(ess-eval-linewise "options(device='quartz')"
+			   nil nil nil 'wait-prompt)))
