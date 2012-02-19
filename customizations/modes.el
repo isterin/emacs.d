@@ -44,3 +44,13 @@
     ; (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
     (add-to-list 'slime-lisp-implementations 
       '(sbcl ("/usr/local/bin/sbcl")))))
+	  
+
+;; R-mode
+(message "WTF????")
+(defun r-mode-hook-init ()
+  (interactive "P")
+  (message "WTF DUDE???")
+  (ess-eval-linewise
+  	"Sys.setenv(R_INTERACTIVE_DEVICE='quartz')" nil nil nil 'wait-prompt))
+(add-hook 'R-mode-hook 'r-mode-hook-init)
