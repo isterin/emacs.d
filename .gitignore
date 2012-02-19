@@ -25,3 +25,4 @@ tramp
 swank/
 elpa/archives/
 *.swp
+.eshell/

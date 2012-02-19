@@ -33,5 +33,7 @@
 (vendor 'ensime)
 (vendor 'sr-speedbar)
 
+(load "~/.emacs.d/vendor/ess-5.14/lisp/ess-site")
+
 ; load customizations
 (mapcar 'load-directory '("~/.emacs.d/customizations"))
