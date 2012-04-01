@@ -16,18 +16,29 @@
 
 
 ;; Lisp
-; (require 'slime)
-; (slime-setup '(slime-fancy slime-contrib))
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "/usr/local/bin/sbcl"
+
+;; Defer slime, this is to play nice with clojure-jack-in
+(defun slime ()
+  (interactive)
+	(fmakunbound 'slime)
+	(load (expand-file-name "~/quicklisp/slime-helper.el"))
+	(set-language-environment "UTF-8")
+	(setq inferior-lisp-program "/usr/local/bin/sbcl"
+		lisp-indent-function 'common-lisp-indent-function
+		slime-complete-symbol-function 'slime-fuzzy-complete-symbol
+		slime-net-coding-system 'utf-8-unix)
+	(slime)
+	(slime-setup '(slime-fancy slime-contrib)))
+
+; (setq inferior-lisp-program "/usr/local/bin/sbcl"
   ;; Change me!
   ; slime-path (expand-file-name "~/.emacs.d/vendor/slime/")
   ; w3m-command "/usr/local/bin/w3m"
   ; cltl2-url "file:///usr/share/doc/cltl/clm/node1.html"
   ; hyperspec-prog (concat slime-path "hyperspec")
   ; hyperspec-path "/usr/share/doc/hyperspec/"
-  lisp-indent-function 'common-lisp-indent-function
-  slime-complete-symbol-function 'slime-fuzzy-complete-symbol
+  ; lisp-indent-function 'common-lisp-indent-function
+  ; slime-complete-symbol-function 'slime-fuzzy-complete-symbol
   ; common-lisp-hyperspec-root (concat "file://" hyperspec-path)
   ; common-lisp-hyperspec-symbol-table (concat hyperspec-path "Data/Map_Sym.txt")
   ; w3m-default-homepage "file:///usr/share/doc/hyperspec/Front/X_Symbol.htm"
@@ -39,7 +50,7 @@
   ; w3m-file-coding-system 'utf-8
   ; w3m-file-name-coding-system 'utf-8
   ; w3m-terminal-coding-system 'utf-8
-  )
+  ; )
 
 
 (eval-after-load 'slime
