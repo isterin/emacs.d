@@ -16,6 +16,9 @@
 
 
 ;; Lisp
+; (require 'slime)
+; (slime-setup '(slime-fancy slime-contrib))
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "/usr/local/bin/sbcl"
   ;; Change me!
   ; slime-path (expand-file-name "~/.emacs.d/vendor/slime/")
@@ -23,8 +26,8 @@
   ; cltl2-url "file:///usr/share/doc/cltl/clm/node1.html"
   ; hyperspec-prog (concat slime-path "hyperspec")
   ; hyperspec-path "/usr/share/doc/hyperspec/"
-  ; lisp-indent-function 'common-lisp-indent-function
-  ; slime-complete-symbol-function 'slime-fuzzy-complete-symbol
+  lisp-indent-function 'common-lisp-indent-function
+  slime-complete-symbol-function 'slime-fuzzy-complete-symbol
   ; common-lisp-hyperspec-root (concat "file://" hyperspec-path)
   ; common-lisp-hyperspec-symbol-table (concat hyperspec-path "Data/Map_Sym.txt")
   ; w3m-default-homepage "file:///usr/share/doc/hyperspec/Front/X_Symbol.htm"
@@ -45,6 +48,7 @@
     (add-to-list 'slime-lisp-implementations 
       '(sbcl ("/usr/local/bin/sbcl")))))
 	  
+	  
 
 ;; R-mode
 (global-set-key (kbd "s-r") (lambda ()
@@ -52,3 +56,14 @@
 	(R)
 	(ess-eval-linewise "options(device='quartz')"
 			   nil nil nil 'wait-prompt)))
+			   
+;; Python
+(add-hook 'python-mode-hook
+  (lambda ()
+	(set-variable 'py-indent-offset 4)
+	;(set-variable 'py-smart-indentation nil)
+	(set-variable 'indent-tabs-mode nil)
+	(define-key py-mode-map (kbd "RET") 'newline-and-indent)
+	;(define-key py-mode-map [tab] 'yas/expand)
+	;(setq yas/after-exit-snippet-hook 'indent-according-to-mode)
+	))			   
