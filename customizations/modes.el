@@ -61,6 +61,9 @@
 	  
 	  
 
+;; Scheme (Geiser)
+(setq geiser-racket-binary "/Users/ilya/Applications/Racket v5.3/bin/racket")
+
 ;; R-mode
 (global-set-key (kbd "s-r") (lambda ()
   (interactive)
